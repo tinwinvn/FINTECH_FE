@@ -1,5 +1,6 @@
 import { SectionHeading } from "../../components/Layout/SectionHeading";
 import { EventListItem } from "../../components/Card/EventListItem";
+import { IconCalendarClock } from "../../components/Icons/Icons";
 
 const events = [
   {
@@ -28,7 +29,11 @@ const events = [
 export const EventsSection = () => {
   return (
     <div className="h-full flex flex-col">
-      <SectionHeading title="SỰ KIỆN SẮP DIỄN RA" linkText="Xem tất cả →" />
+      <SectionHeading
+        title="SỰ KIỆN SẮP DIỄN RA"
+        linkText="Xem tất cả →"
+        icon={<IconCalendarClock size={20} />}
+      />
       <div className="flex flex-col flex-1">
         {events.map((event, i) => (
           <EventListItem

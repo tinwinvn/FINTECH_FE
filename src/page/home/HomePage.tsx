@@ -13,7 +13,7 @@ export const HomePage = () => {
         titleLine1="KẾT NỐI TRI THỨC –"
         titleLine2="DẪN DẮT ĐỔI MỚI –"
         titleLine3="KIẾN TẠO PHÁT TRIỂN BỀN VỮNG"
-        subtitle="Viện Nghiên cứu – Đào tạo FinTech, Đổi mới sáng tạo và Phát triển bền vững. Trung tâm nghiên cứu, đào tạo và tư vấn chính sách trong các lĩnh vực FinTech, đổi mới sáng tạo và phát triển bền vững, đồng hành cùng Đà Nẵng xây dựng Trung tâm Tài chính quốc tế và hệ sinh thái kinh tế – tài chính hiện đại, bền vững."
+        subtitle="Trung tâm nghiên cứu, đào tạo và tư vấn chính sách trong các lĩnh vực FinTech, đổi mới sáng tạo và phát triển bền vững, đồng hành cùng Đà Nẵng xây dựng Trung tâm Tài chính quốc tế và hệ sinh thái kinh tế – tài chính hiện đại, bền vững."
         buttons={[
           { text: "TÌM HIỂU VỀ VIỆN", variant: "primary-green" as const },
           { text: "CHƯƠNG TRÌNH ĐÀO TẠO", variant: "outline-white" as const },

@@ -43,7 +43,7 @@ export const Input = ({
   return (
     <div>
       {label && (
-        <label className="block font-sans text-[14px] font-medium leading-[1.5] text-text-primary mb-2">
+        <label className="block font-sans text-[14px] font-medium leading-normal text-text-primary mb-2">
           {label}
         </label>
       )}

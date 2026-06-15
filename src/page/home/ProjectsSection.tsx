@@ -1,5 +1,6 @@
 import { SectionHeading } from "../../components/Layout/SectionHeading";
 import { NewsListItem } from "../../components/Card/NewsListItem";
+import { IconFlask } from "../../components/Icons/Icons";
 import projectThumb1 from "../../assets/project_thumb_1.png";
 import projectThumb2 from "../../assets/project_thumb_2.png";
 import projectThumb3 from "../../assets/project_thumb_3.png";
@@ -26,12 +27,13 @@ const projects = [
 
 export const ProjectsSection = () => {
   return (
-    <div>
+    <div className="h-full flex flex-col">
       <SectionHeading
         title="DỰ ÁN / NGHIÊN CỨU TIÊU BIỂU"
         linkText="Xem tất cả →"
+        icon={<IconFlask size={20} />}
       />
-      <div className="flex flex-col">
+      <div className="flex flex-col flex-1">
         {projects.map((project, i) => (
           <NewsListItem
             key={i}

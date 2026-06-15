@@ -55,6 +55,11 @@
   --animate-slide-up: slide-up 0.5s ease-out both;
   --animate-fade-in-up: fade-in-up 0.5s ease-out both;
   --animate-marquee: marquee 30s linear infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-icon-float: icon-float 3s ease-in-out infinite;
+  --animate-footer-reveal: footer-reveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-footer-glow: footer-glow 3s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s ease-in-out infinite;
 
   @keyframes fade-in {
     from { opacity: 0; }
@@ -74,6 +79,31 @@
   @keyframes marquee {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(26, 138, 52, 0.4); }
+    50% { box-shadow: 0 0 16px 4px rgba(26, 138, 52, 0.2); }
+  }
+
+  @keyframes icon-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+  }
+
+  @keyframes footer-reveal {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes footer-glow {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
   }
 }
 
@@ -106,3 +136,194 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* ── Footer column divider utility ── */
+.footer-col-divider {
+  position: relative;
+}
+.footer-col-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #1e3a68 30%, #1e3a68 70%, transparent);
+}
+
+/* ── Footer gradient accent line ── */
+.footer-accent-line {
+  height: 3px;
+  background: linear-gradient(90deg, #f05123 0%, #1a8a34 50%, #0a2e5c 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* ── Footer section title underline ── */
+.footer-title-accent {
+  position: relative;
+  padding-bottom: 10px;
+}
+.footer-title-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, #f05123, #1a8a34);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.footer-title-accent:hover::after {
+  width: 48px;
+}
+
+/* ── Footer link with arrow ── */
+.footer-link {
+  position: relative;
+  padding-left: 0;
+  transition: padding-left 0.25s ease, color 0.2s ease;
+}
+.footer-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background: #f05123;
+  border-radius: 1px;
+  transition: width 0.25s ease;
+}
+.footer-link:hover {
+  padding-left: 14px;
+  color: #ffffff;
+}
+.footer-link:hover::before {
+  width: 8px;
+}
+
+/* ── Social icon hover effects ── */
+.footer-social-icon {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+.footer-social-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.15) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.footer-social-icon:hover::before {
+  opacity: 1;
+}
+.footer-social-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 6px 20px -4px rgba(240, 81, 35, 0.4);
+}
+.footer-social-icon:active {
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* ── Newsletter form ── */
+.footer-newsletter-input {
+  background: rgba(30, 58, 104, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 10px 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.footer-newsletter-input::placeholder {
+  color: #6b7a94;
+}
+.footer-newsletter-input:focus {
+  border-color: rgba(240, 81, 35, 0.5);
+  box-shadow: 0 0 0 3px rgba(240, 81, 35, 0.1);
+  background: rgba(30, 58, 104, 0.8);
+}
+.footer-newsletter-btn {
+  background: linear-gradient(135deg, #f05123, #e0431a);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+.footer-newsletter-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(240, 81, 35, 0.35);
+  background: linear-gradient(135deg, #ff6341, #f05123);
+}
+.footer-newsletter-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Contact icon pill ── */
+.footer-contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(240, 81, 35, 0.12);
+  color: #f05123;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.group:hover .footer-contact-icon {
+  background: rgba(240, 81, 35, 0.22);
+  transform: scale(1.08);
+}
+
+/* ── QR code container ── */
+.footer-qr-container {
+  background: white;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.footer-qr-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* ── Staggered animation delay utilities ── */
+.stagger-1 { animation-delay: 0.1s; transition-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; transition-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; transition-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; transition-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; transition-delay: 0.5s; }
+
+/* ── Hide scrollbar for marquee ── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Footer responsive touch targets ── */
+@media (max-width: 640px) {
+  .footer-link {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+  }
+}
+

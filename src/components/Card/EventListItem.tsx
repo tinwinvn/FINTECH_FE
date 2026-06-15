@@ -1,5 +1,3 @@
-
-
 export type EventListItemProps = {
   day: string;
   month: string;
@@ -21,36 +19,34 @@ export const EventListItem = ({
 }: EventListItemProps) => {
   return (
     <div
-      className={`flex gap-4 py-2 border-b border-border-hairline cursor-pointer group transition-colors duration-150 hover:bg-gray-50 ${className}`}
+      className={`flex gap-3 sm:gap-4 py-2.5 border-b border-border-hairline cursor-pointer group transition-all duration-200 hover:bg-gray-50 hover:pl-1 ${className}`}
       onClick={onClick}
     >
-      {/* Date Box */}
-      <div className="flex flex-col items-center min-w-[45px] shrink-0">
-        <span className="font-sans text-[24px] font-bold leading-[1] text-brand-navy">
+      <div className="h-20 w-20 flex flex-col justify-center items-center min-w-10.5 sm:min-w-11.25 shrink-0 group-hover:scale-105 transition-transform duration-200">
+        <span className="font-sans text-[20px] sm:text-[24px] font-bold leading-none text-brand-navy">
           {day}
         </span>
-        <span className="font-sans text-[11px] font-semibold uppercase text-brand-navy">
+        <span className="font-sans text-[10px] sm:text-[11px] font-semibold uppercase text-brand-navy">
           {month}
         </span>
       </div>
 
-      {/* Content */}
       <div className="flex flex-col justify-center min-w-0">
-        <h4 className="font-sans text-[14px] font-semibold leading-[1.4] text-text-primary m-0 group-hover:text-brand-navy transition-colors duration-150 line-clamp-2">
+        <h4 className="font-sans text-[13px] sm:text-[14px] font-semibold leading-[1.4] text-text-primary m-0 group-hover:text-brand-navy transition-colors duration-150 line-clamp-3">
           {title}
         </h4>
         {(time || location) && (
           <div className="flex items-center gap-2 mt-1">
             {time && (
-              <span className="font-sans text-[12px] font-normal leading-[1.4] text-text-muted">
+              <span className="font-sans text-[11px] sm:text-[12px] font-normal leading-[1.4] text-text-muted">
                 {time}
               </span>
             )}
             {time && location && (
-              <span className="text-text-muted">•</span>
+              <span className="text-text-muted text-[10px]">•</span>
             )}
             {location && (
-              <span className="font-sans text-[12px] font-normal leading-[1.4] text-text-muted">
+              <span className="font-sans text-[11px] sm:text-[12px] font-normal leading-[1.4] text-text-muted">
                 {location}
               </span>
             )}

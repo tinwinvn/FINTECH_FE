@@ -43,8 +43,7 @@ export const HeroBanner = ({
 
   return (
     <section
-      className={`relative w-full overflow-hidden ${className}`}
-      style={{ height: 320, maxHeight: 340 }}
+      className={`relative w-full overflow-hidden min-h-60 sm:min-h-70 md:min-h-80 max-h-100 ${className}`}
     >
       {backgroundImage ? (
         <img
@@ -74,10 +73,10 @@ export const HeroBanner = ({
         }}
       />
 
-      <div className="relative z-10 max-w-418 mx-auto px-6 h-full flex items-center">
-        <div className="w-full max-w-[55%] max-lg:max-w-[70%] max-md:max-w-full py-8">
+      <div className="relative z-10 max-w-418 mx-auto px-4 sm:px-6 h-full flex items-center min-h-60 sm:min-h-70 md:min-h-80">
+        <div className="w-full max-w-full sm:max-w-[80%] md:max-w-[70%] lg:max-w-[55%] py-6 sm:py-8">
           {isMultiLine ? (
-            <h1 className="font-sans text-[26px] max-md:text-[20px] max-sm:text-[16px] font-bold leading-tight uppercase text-text-inverse m-0 mb-2">
+            <h1 className="font-sans text-[16px] sm:text-[20px] md:text-[24px] lg:text-[26px] font-bold leading-tight uppercase text-text-inverse m-0 mb-2">
               <span className="animate-fade-in">{titleLine1}</span>
               <br />
               <span
@@ -95,7 +94,7 @@ export const HeroBanner = ({
               </span>
             </h1>
           ) : (
-            <h1 className="font-sans text-[32px] max-md:text-[24px] max-sm:text-[18px] font-bold leading-tight uppercase text-text-inverse m-0 mb-2 animate-fade-in">
+            <h1 className="font-sans text-[18px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-bold leading-tight uppercase text-text-inverse m-0 mb-2 animate-fade-in">
               {titleWhite}
               <br />
               <span className="text-brand-orange">{titleHighlight}</span>
@@ -103,7 +102,15 @@ export const HeroBanner = ({
           )}
 
           <p
-            className="font-sans text-[12px] font-normal leading-[1.65] text-text-inverse/85 mt-2 mb-4 m-0 animate-fade-in"
+            className="font-sans text-sm sm:text-base font-semibold leading-[1.65] text-text-inverse/85 mt-2 mb-4 m-0 animate-fade-in"
+            style={{ animationDelay: "0.4s" }}
+          >
+            Viện Nghiên cứu – Đào tạo FinTech, Đổi mới sáng tạo và Phát triển
+            bền vững.
+          </p>
+
+          <p
+            className="font-sans text-[11px] sm:text-[12px] font-normal leading-[1.65] text-text-inverse/85 mt-2 mb-4 m-0 max-w-162 animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
             {subtitle}

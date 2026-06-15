@@ -44,7 +44,7 @@ export const Tabs = ({
             role="tab"
             aria-selected={isActive}
             className={`
-              bg-transparent font-sans text-[13px] font-semibold leading-[1.5] uppercase
+              bg-transparent font-sans text-[13px] font-semibold leading-normal uppercase
               px-4 py-3 border-b-[3px] cursor-pointer transition-all duration-150 ease-in-out outline-none
               ${
                 isActive

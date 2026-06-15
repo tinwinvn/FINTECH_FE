@@ -6,10 +6,6 @@ type UseScrollAnimationOptions = {
   triggerOnce?: boolean;
 };
 
-/**
- * Custom hook that triggers animation when element scrolls into viewport.
- * Returns a ref to attach to the target element and a boolean indicating visibility.
- */
 export const useScrollAnimation = ({
   threshold = 0.15,
   rootMargin = "0px 0px -40px 0px",
@@ -33,7 +29,7 @@ export const useScrollAnimation = ({
           setIsVisible(false);
         }
       },
-      { threshold, rootMargin }
+      { threshold, rootMargin },
     );
 
     observer.observe(element);

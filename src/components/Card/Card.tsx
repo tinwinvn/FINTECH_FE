@@ -15,8 +15,7 @@ export type CardProps = {
 
 const variantClasses: Record<CardVariant, string> = {
   base: "bg-canvas rounded-sm p-6 border border-border-hairline",
-  newsletter:
-    "bg-surface-navy text-text-inverse rounded-md p-8",
+  newsletter: "bg-surface-navy text-text-inverse rounded-md p-8",
 };
 
 export const Card = ({
@@ -48,7 +47,7 @@ export const Card = ({
           )}
           {description && (
             <div
-              className={`font-sans text-[14px] font-normal leading-[1.5] ${
+              className={`font-sans text-[14px] font-normal leading-normal ${
                 variant === "newsletter"
                   ? "text-text-inverse-muted"
                   : "text-text-secondary"

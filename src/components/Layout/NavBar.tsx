@@ -1,8 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../Button/Button";
-import { IconChevronDown, IconMenu, IconClose, IconSearch } from "../Icons/Icons";
-import Logo from "../../assets/Logo_display.jpg"
+import {
+  IconChevronDown,
+  IconMenu,
+  IconClose,
+  IconSearch,
+} from "../Icons/Icons";
+import Logo from "../../assets/Logo_display.jpg";
 
 export type NavItem = {
   label: string;
@@ -34,7 +39,7 @@ const defaultNavItems: NavItem[] = [
 ];
 
 export const NavBar = ({
-  logo,
+  logo: _logo,
   navItems = defaultNavItems,
   className = "",
 }: NavBarProps) => {
@@ -44,7 +49,6 @@ export const NavBar = ({
   const [lang, setLang] = useState("VI");
   const langRef = useRef<HTMLDivElement>(null);
 
-  // Close language dropdown on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
@@ -59,22 +63,21 @@ export const NavBar = ({
     <header
       className={`w-full bg-canvas border-b border-border-hairline sticky top-0 z-50 shadow-sm ${className}`}
     >
-      <div className="max-w-[1672px] mx-auto px-4">
-        {/* Two-row layout with logo spanning both rows */}
+      <div className="max-w-456 mx-auto px-4">
         <div className="flex">
-          {/* Logo — spans both rows vertically */}
           <Link
             to="/"
             className="flex items-center no-underline shrink-0 mr-5 self-stretch"
           >
-            <img src={Logo} className="h-30 w-90 py-5 px-10" alt="logo" />
+            <img
+              src={Logo}
+              className="h-16 w-40 py-2 px-3 sm:h-20 sm:w-56 sm:py-3 sm:px-5 lg:h-30 lg:w-90 lg:py-5 lg:px-10"
+              alt="logo"
+            />
           </Link>
 
-          {/* Right side: two stacked rows */}
           <div className="flex-1 min-w-0 flex flex-col">
-            {/* Row 1: Search + Language + CTA (the "old header") */}
             <div className="hidden lg:flex items-center justify-end gap-3 h-10 pb-8 pt-10">
-              {/* Search — longer, icon as suffix */}
               <div className="flex items-center bg-canvas text-text-primary rounded-sm px-3 py-1.5 border border-border-hairline h-8 w-64 focus-within:border-brand-navy transition-colors duration-150">
                 <input
                   className="w-full border-none outline-none bg-transparent font-sans text-[12px] text-inherit placeholder:text-text-muted"
@@ -85,7 +88,6 @@ export const NavBar = ({
                 </span>
               </div>
 
-              {/* Language Selector — dropdown with VI/EN */}
               <div ref={langRef} className="relative">
                 <div
                   onClick={() => setLangOpen(!langOpen)}
@@ -97,15 +99,19 @@ export const NavBar = ({
                   <IconChevronDown size={10} className="ml-1 opacity-60" />
                 </div>
                 {langOpen && (
-                  <div className="absolute top-full right-0 mt-1 bg-canvas border border-border-hairline rounded-sm shadow-md z-50 min-w-[72px] overflow-hidden">
+                  <div className="absolute top-full right-0 mt-1 bg-canvas border border-border-hairline rounded-sm shadow-md z-50 min-w-18 overflow-hidden">
                     {["VI", "EN"].map((l) => (
                       <button
                         key={l}
-                        onClick={() => { setLang(l); setLangOpen(false); }}
-                        className={`w-full text-left px-3 py-1.5 font-sans text-[12px] font-semibold border-none cursor-pointer transition-colors ${lang === l
-                          ? "bg-blue-50 text-brand-navy"
-                          : "bg-transparent text-text-primary hover:bg-gray-50"
-                          }`}
+                        onClick={() => {
+                          setLang(l);
+                          setLangOpen(false);
+                        }}
+                        className={`w-full text-left px-3 py-1.5 font-sans text-[12px] font-semibold border-none cursor-pointer transition-colors ${
+                          lang === l
+                            ? "bg-blue-50 text-brand-navy"
+                            : "bg-transparent text-text-primary hover:bg-gray-50"
+                        }`}
                       >
                         {l === "VI" ? "🇻🇳 VI" : "🇬🇧 EN"}
                       </button>
@@ -119,7 +125,6 @@ export const NavBar = ({
               </Button>
             </div>
 
-            {/* Row 2: Navigation items — centered */}
             <nav className="hidden lg:flex items-center justify-center h-10">
               {navItems.map((item) => {
                 const isActive = location.pathname === item.href;
@@ -129,11 +134,12 @@ export const NavBar = ({
                     to={item.href}
                     className={`
                       inline-flex items-center gap-0.5 whitespace-nowrap
-                      font-sans text-[11px] font-semibold leading-[1.5] uppercase no-underline
+                      font-sans text-[11px] font-semibold leading-normal uppercase no-underline
                       px-2 h-full border-b-[3px] transition-all duration-150
-                      ${isActive
-                        ? "text-brand-navy border-brand-navy"
-                        : "text-text-primary border-transparent hover:text-brand-navy"
+                      ${
+                        isActive
+                          ? "text-brand-navy border-brand-navy"
+                          : "text-text-primary border-transparent hover:text-brand-navy"
                       }
                     `}
                   >
@@ -147,7 +153,6 @@ export const NavBar = ({
             </nav>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button
             className="lg:hidden bg-transparent border-none cursor-pointer text-text-primary p-1 ml-auto self-center"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -158,7 +163,6 @@ export const NavBar = ({
         </div>
       </div>
 
-      {/* Mobile Nav Dropdown */}
       {mobileOpen && (
         <div className="lg:hidden border-t border-border-hairline bg-canvas animate-slide-up max-h-[70vh] overflow-y-auto">
           {navItems.map((item) => {
@@ -171,9 +175,10 @@ export const NavBar = ({
                 className={`
                   flex items-center justify-between font-sans text-[13px] font-semibold uppercase no-underline
                   px-6 py-3 border-l-[3px] transition-all duration-150
-                  ${isActive
-                    ? "text-brand-navy border-brand-navy bg-blue-50"
-                    : "text-text-primary border-transparent hover:text-brand-navy hover:bg-gray-50"
+                  ${
+                    isActive
+                      ? "text-brand-navy border-brand-navy bg-blue-50"
+                      : "text-text-primary border-transparent hover:text-brand-navy hover:bg-gray-50"
                   }
                 `}
               >

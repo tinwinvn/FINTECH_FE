@@ -31,7 +31,8 @@ const sampleNews = [
   {
     thumbnailUrl:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=160&h=110&fit=crop",
-    title: "Nghiên cứu mới về ứng dụng Blockchain trong thanh toán xuyên biên giới",
+    title:
+      "Nghiên cứu mới về ứng dụng Blockchain trong thanh toán xuyên biên giới",
     date: "05 Tháng 6, 2026",
   },
   {
@@ -108,20 +109,20 @@ export const ComponentShowcase = () => {
 
   return (
     <div>
-      {/* Page Header */}
       <div className="bg-brand-navy text-text-inverse py-12">
         <div className="max-w-7xl mx-auto px-6">
           <h1 className="font-sans text-[32px] max-md:text-[24px] font-bold uppercase m-0 mb-3 animate-fade-in">
             Thư Viện Thành Phần
           </h1>
-          <p className="font-sans text-[16px] font-normal leading-[1.5] text-text-inverse-muted m-0 max-w-2xl animate-fade-in">
-            Tất cả các thành phần giao diện được thiết kế theo Hệ thống Thiết kế IFISD — phong cách học thuật, chuyên nghiệp với hệ màu ngữ nghĩa ba màu.
+          <p className="font-sans text-[16px] font-normal leading-normal text-text-inverse-muted m-0 max-w-2xl animate-fade-in">
+            Tất cả các thành phần giao diện được thiết kế theo Hệ thống Thiết kế
+            IFISD — phong cách học thuật, chuyên nghiệp với hệ màu ngữ nghĩa ba
+            màu.
           </p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-10 flex gap-8">
-        {/* Sidebar — desktop only */}
         <aside className="hidden lg:block w-56 shrink-0">
           <nav className="sticky top-32">
             <h3 className="font-sans text-[13px] font-semibold uppercase text-text-muted mb-4 m-0">
@@ -150,99 +151,123 @@ export const ComponentShowcase = () => {
           </nav>
         </aside>
 
-        {/* Main Content */}
         <div className="flex-1 min-w-0">
-          {/* ── Hero Banner ── */}
           <ShowcaseSection id="hero-banner" title="HERO BANNER">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Banner chính với hình nền, lớp phủ gradient màu navy và nội dung chữ trắng + cam. Sử dụng nút xanh lá chính và nút viền trắng.
+              Banner chính với hình nền, lớp phủ gradient màu navy và nội dung
+              chữ trắng + cam. Sử dụng nút xanh lá chính và nút viền trắng.
             </p>
             <div className="rounded-sm overflow-hidden border border-border-hairline">
               <HeroBanner />
             </div>
           </ShowcaseSection>
 
-          {/* ── Typography ── */}
           <ShowcaseSection id="typography" title="KIỂU CHỮ">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Hệ thống kiểu chữ tuân theo nguyên tắc chữ in hoa cho tiêu đề, điều hướng và nút bấm. Phông chữ chính: Roboto / Inter.
+              Hệ thống kiểu chữ tuân theo nguyên tắc chữ in hoa cho tiêu đề,
+              điều hướng và nút bấm. Phông chữ chính: Roboto / Inter.
             </p>
             <div className="flex flex-col gap-6 p-6 bg-white border border-border-hairline rounded-sm">
               <div>
-                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">hero-display (40px, bold, uppercase)</span>
+                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">
+                  hero-display (40px, bold, uppercase)
+                </span>
                 <Typography variant="hero-display" color="navy">
                   TIÊU ĐỀ HERO
                 </Typography>
               </div>
               <div>
-                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">hero-highlight (40px, bold, uppercase, orange)</span>
+                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">
+                  hero-highlight (40px, bold, uppercase, orange)
+                </span>
                 <Typography variant="hero-highlight">
                   FINTECH & ĐỔI MỚI
                 </Typography>
               </div>
               <div>
-                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">section-heading (18px, bold, uppercase, navy)</span>
-                <Typography variant="section-heading">
-                  TIÊU ĐỀ MỤC
-                </Typography>
+                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">
+                  section-heading (18px, bold, uppercase, navy)
+                </span>
+                <Typography variant="section-heading">TIÊU ĐỀ MỤC</Typography>
               </div>
               <div>
-                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">pillar-heading (18px, bold, uppercase)</span>
+                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">
+                  pillar-heading (18px, bold, uppercase)
+                </span>
                 <Typography variant="pillar-heading">
                   TIÊU ĐỀ TRỤ CỘT
                 </Typography>
               </div>
               <div>
-                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">card-title (14px, semibold)</span>
+                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">
+                  card-title (14px, semibold)
+                </span>
                 <Typography variant="card-title">
                   Tiêu đề thẻ nội dung
                 </Typography>
               </div>
               <div>
-                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">body-md (14px, regular)</span>
+                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">
+                  body-md (14px, regular)
+                </span>
                 <Typography variant="body-md">
-                  Nội dung chính — IFISD tiên phong trong nghiên cứu và đào tạo công nghệ tài chính tại Việt Nam.
+                  Nội dung chính — IFISD tiên phong trong nghiên cứu và đào tạo
+                  công nghệ tài chính tại Việt Nam.
                 </Typography>
               </div>
               <div>
-                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">meta-text (12px, muted)</span>
+                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">
+                  meta-text (12px, muted)
+                </span>
                 <Typography variant="meta-text">
                   08 Tháng 6, 2026 • Đà Nẵng
                 </Typography>
               </div>
               <div className="flex items-end gap-4">
                 <div>
-                  <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">event-day (24px, bold)</span>
+                  <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">
+                    event-day (24px, bold)
+                  </span>
                   <Typography variant="event-day">15</Typography>
                 </div>
                 <div>
-                  <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">event-month (11px, semibold)</span>
+                  <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">
+                    event-month (11px, semibold)
+                  </span>
                   <Typography variant="event-month">Th6</Typography>
                 </div>
               </div>
               <div>
-                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">nav-link (13px, semibold, uppercase)</span>
+                <span className="font-sans text-[12px] text-text-muted uppercase mb-1 block">
+                  nav-link (13px, semibold, uppercase)
+                </span>
                 <Typography variant="nav-link">ĐIỀU HƯỚNG</Typography>
               </div>
             </div>
 
-            {/* Color palette */}
             <h3 className="font-sans text-[14px] font-semibold text-text-primary mt-8 mb-4">
               Bảng màu chữ
             </h3>
             <div className="flex flex-wrap gap-3">
-              {(["primary", "secondary", "muted", "navy", "orange", "green"] as const).map(
-                (color) => (
-                  <div
-                    key={color}
-                    className="px-4 py-2 border border-border-hairline rounded-sm"
-                  >
-                    <Typography variant="card-title" color={color}>
-                      {color}
-                    </Typography>
-                  </div>
-                )
-              )}
+              {(
+                [
+                  "primary",
+                  "secondary",
+                  "muted",
+                  "navy",
+                  "orange",
+                  "green",
+                ] as const
+              ).map((color) => (
+                <div
+                  key={color}
+                  className="px-4 py-2 border border-border-hairline rounded-sm"
+                >
+                  <Typography variant="card-title" color={color}>
+                    {color}
+                  </Typography>
+                </div>
+              ))}
               <div className="px-4 py-2 bg-brand-navy rounded-sm">
                 <Typography variant="card-title" color="inverse">
                   inverse
@@ -256,21 +281,22 @@ export const ComponentShowcase = () => {
             </div>
           </ShowcaseSection>
 
-          {/* ── Buttons ── */}
           <ShowcaseSection id="buttons" title="NÚT BẤM">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Hệ thống nút bấm sử dụng góc bo 4px, chữ in hoa 13px đậm, không có bóng. Cam cho CTA chính, Xanh lá cho hành động xác nhận, Viền trắng cho nền tối.
+              Hệ thống nút bấm sử dụng góc bo 4px, chữ in hoa 13px đậm, không có
+              bóng. Cam cho CTA chính, Xanh lá cho hành động xác nhận, Viền
+              trắng cho nền tối.
             </p>
 
-            {/* Primary buttons */}
             <h3 className="font-sans text-[14px] font-semibold text-text-primary mb-4">
               Nút chính
             </h3>
             <div className="flex flex-wrap gap-3 mb-6">
-              <Button variant="primary-orange">
-                Liên hệ ngay
-              </Button>
-              <Button variant="primary-orange" iconRight={<IconArrowRight size={14} />}>
+              <Button variant="primary-orange">Liên hệ ngay</Button>
+              <Button
+                variant="primary-orange"
+                iconRight={<IconArrowRight size={14} />}
+              >
                 Khám phá
               </Button>
               <Button variant="primary-orange" disabled>
@@ -285,9 +311,7 @@ export const ComponentShowcase = () => {
               Nút xanh lá (xác nhận)
             </h3>
             <div className="flex flex-wrap gap-3 mb-6">
-              <Button variant="primary-green">
-                Tìm hiểu thêm
-              </Button>
+              <Button variant="primary-green">Tìm hiểu thêm</Button>
               <Button variant="primary-green" size="lg">
                 Đăng ký ngay
               </Button>
@@ -300,10 +324,11 @@ export const ComponentShowcase = () => {
               Nút viền trắng (trên nền tối)
             </h3>
             <div className="flex flex-wrap gap-3 p-6 bg-brand-navy rounded-sm mb-6">
-              <Button variant="outline-white">
-                Chương trình đào tạo
-              </Button>
-              <Button variant="outline-white" iconRight={<IconArrowRight size={14} />}>
+              <Button variant="outline-white">Chương trình đào tạo</Button>
+              <Button
+                variant="outline-white"
+                iconRight={<IconArrowRight size={14} />}
+              >
                 Xem thêm
               </Button>
             </div>
@@ -318,16 +343,22 @@ export const ComponentShowcase = () => {
             </div>
           </ShowcaseSection>
 
-          {/* ── Badges ── */}
           <ShowcaseSection id="badges" title="NHÃN">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Nhãn sử dụng hệ màu ngữ nghĩa ba màu: Navy (Tri thức), Cam (Đổi mới), Xanh lá (Bền vững), và viền (Metadata).
+              Nhãn sử dụng hệ màu ngữ nghĩa ba màu: Navy (Tri thức), Cam (Đổi
+              mới), Xanh lá (Bền vững), và viền (Metadata).
             </p>
             <div className="flex flex-wrap gap-3">
-              <Badge variant="navy" icon={<IconGraduationCap size={12} color="#fff" />}>
+              <Badge
+                variant="navy"
+                icon={<IconGraduationCap size={12} color="#fff" />}
+              >
                 Nghiên cứu
               </Badge>
-              <Badge variant="orange" icon={<IconLightbulb size={12} color="#fff" />}>
+              <Badge
+                variant="orange"
+                icon={<IconLightbulb size={12} color="#fff" />}
+              >
                 Đổi mới
               </Badge>
               <Badge variant="green" icon={<IconLeaf size={12} color="#fff" />}>
@@ -341,10 +372,10 @@ export const ComponentShowcase = () => {
             </div>
           </ShowcaseSection>
 
-          {/* ── Inputs ── */}
           <ShowcaseSection id="inputs" title="Ô NHẬP LIỆU">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Ô nhập liệu sử dụng góc bo 4px, viền hairline, không có bóng. Ba biến thể: tìm kiếm, bản tin và văn bản.
+              Ô nhập liệu sử dụng góc bo 4px, viền hairline, không có bóng. Ba
+              biến thể: tìm kiếm, bản tin và văn bản.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -385,15 +416,18 @@ export const ComponentShowcase = () => {
                 <h3 className="font-sans text-[14px] font-semibold text-text-inverse mb-3">
                   Bản tin (trên nền tối)
                 </h3>
-                <Input variant="newsletter" placeholder="Nhập email của bạn..." />
+                <Input
+                  variant="newsletter"
+                  placeholder="Nhập email của bạn..."
+                />
               </div>
             </div>
           </ShowcaseSection>
 
-          {/* ── Tabs ── */}
           <ShowcaseSection id="tabs" title="ĐIỀU HƯỚNG">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Thanh điều hướng sử dụng chữ in hoa 13px đậm với đường viền dưới 3px màu navy cho tab đang hoạt động.
+              Thanh điều hướng sử dụng chữ in hoa 13px đậm với đường viền dưới
+              3px màu navy cho tab đang hoạt động.
             </p>
             <Tabs
               items={[
@@ -407,10 +441,10 @@ export const ComponentShowcase = () => {
             />
           </ShowcaseSection>
 
-          {/* ── Base Cards ── */}
           <ShowcaseSection id="cards" title="THẺ CƠ BẢN">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Thẻ cơ bản sử dụng viền hairline, góc bo 4px, không có bóng. Biến thể newsletter sử dụng nền navy tối.
+              Thẻ cơ bản sử dụng viền hairline, góc bo 4px, không có bóng. Biến
+              thể newsletter sử dụng nền navy tối.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card
@@ -418,30 +452,22 @@ export const ComponentShowcase = () => {
                 icon={<IconBookOpen size={20} className="text-brand-navy" />}
                 title="Thẻ cơ bản"
                 description="Thẻ nội dung với viền hairline, phong cách phẳng, không sử dụng bóng đổ."
-                footer={
-                  <Button variant="link-navy">
-                    Xem chi tiết →
-                  </Button>
-                }
+                footer={<Button variant="link-navy">Xem chi tiết →</Button>}
               />
               <Card
                 variant="base"
                 icon={<IconStar size={20} className="text-brand-orange" />}
                 title="Thẻ nổi bật"
                 description="Thẻ nội dung với icon ngôi sao, có thể chứa bất kỳ nội dung con nào."
-                footer={
-                  <Button variant="link-orange">
-                    Xem chi tiết →
-                  </Button>
-                }
+                footer={<Button variant="link-orange">Xem chi tiết →</Button>}
               />
             </div>
           </ShowcaseSection>
 
-          {/* ── Pillar Cards ── */}
           <ShowcaseSection id="pillars" title="THẺ TRỤ CỘT">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Lưới 3 cột đại diện cho hệ thống màu ngữ nghĩa: Navy (Tri thức), Cam (Đổi mới), Xanh lá (Bền vững). Mỗi cột có icon tròn 64px.
+              Lưới 3 cột đại diện cho hệ thống màu ngữ nghĩa: Navy (Tri thức),
+              Cam (Đổi mới), Xanh lá (Bền vững). Mỗi cột có icon tròn 64px.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-border-hairline rounded-sm divide-x divide-border-hairline">
               <PillarCard
@@ -465,10 +491,10 @@ export const ComponentShowcase = () => {
             </div>
           </ShowcaseSection>
 
-          {/* ── News List ── */}
           <ShowcaseSection id="news" title="DANH SÁCH TIN TỨC">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Hàng tin tức với ảnh thu nhỏ 80×55px bên trái, tiêu đề và ngày tháng bên phải, phân cách bằng đường viền hairline.
+              Hàng tin tức với ảnh thu nhỏ 80×55px bên trái, tiêu đề và ngày
+              tháng bên phải, phân cách bằng đường viền hairline.
             </p>
             <div className="max-w-lg">
               {sampleNews.map((item, i) => (
@@ -477,10 +503,11 @@ export const ComponentShowcase = () => {
             </div>
           </ShowcaseSection>
 
-          {/* ── Event List ── */}
           <ShowcaseSection id="events" title="DANH SÁCH SỰ KIỆN">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Hàng sự kiện với ô ngày tháng xếp chồng (ngày lớn + tháng viết hoa nhỏ) thay cho ảnh thu nhỏ, giúp nhận diện dữ liệu lịch nhanh chóng.
+              Hàng sự kiện với ô ngày tháng xếp chồng (ngày lớn + tháng viết hoa
+              nhỏ) thay cho ảnh thu nhỏ, giúp nhận diện dữ liệu lịch nhanh
+              chóng.
             </p>
             <div className="max-w-lg">
               {sampleEvents.map((item, i) => (
@@ -489,10 +516,10 @@ export const ComponentShowcase = () => {
             </div>
           </ShowcaseSection>
 
-          {/* ── Newsletter ── */}
           <ShowcaseSection id="newsletter" title="ĐĂNG KÝ BẢN TIN">
             <p className="font-sans text-[14px] text-text-secondary mb-6">
-              Khối đăng ký bản tin với nền navy tối, icon mail, ô nhập email và nút đăng ký xanh lá. Góc bo 8px.
+              Khối đăng ký bản tin với nền navy tối, icon mail, ô nhập email và
+              nút đăng ký xanh lá. Góc bo 8px.
             </p>
             <div className="max-w-sm">
               <NewsletterCard
