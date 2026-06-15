@@ -1,12 +1,12 @@
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
-import vcbLogo from "../../assets/VCB.jpg";
-import twbLogo from "../../assets/TWB.jpg";
-import adbLogo from "../../assets/ADB.png";
-import usaidLogo from "../../assets/USAID.png";
-import ifcLogo from "../../assets/IFC.jpg"
-import bidvLogo from "../../assets/BIDV.png"
-import visaLogo from "../../assets/VISA.png"
-import napasLogo from "../../assets/NAPAS.png"
+import vcbLogo from "../../assets/Home/VCB.jpg";
+import twbLogo from "../../assets/Home/TWB.jpg";
+import adbLogo from "../../assets/Home/ADB.png";
+import usaidLogo from "../../assets/Home/USAID.png";
+import ifcLogo from "../../assets/Home/IFC.jpg";
+import bidvLogo from "../../assets/Home/BIDV.png";
+import visaLogo from "../../assets/Home/VISA.png";
+import napasLogo from "../../assets/Home/NAPAS.png";
 
 const partnerLogos = [
   { name: "THE WORLD BANK", image: twbLogo },
@@ -19,13 +19,7 @@ const partnerLogos = [
   { name: "NAPAS", image: napasLogo },
 ];
 
-const PartnerLogo = ({
-  name,
-  image,
-}: {
-  name: string;
-  image: string;
-}) => (
+const PartnerLogo = ({ name, image }: { name: string; image: string }) => (
   <div className="partner-logo-item flex items-center justify-center min-w-40 sm:min-w-48 h-20 sm:h-24 px-5 sm:px-8 select-none">
     <img
       src={image}

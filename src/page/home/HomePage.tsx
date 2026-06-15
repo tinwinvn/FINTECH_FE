@@ -2,7 +2,7 @@ import { HeroBanner } from "../../components/Layout/HeroBanner";
 import { PillarsSection } from "./PillarsSection";
 import { ContentGrid } from "./ContentGrid";
 import { PartnersSection } from "./PartnersSection";
-import heroImage from "../../assets/hero.png";
+import heroImage from "../../assets/Home/hero.png";
 import { MainLayout } from "../../components/Layout/MainLayout";
 
 export const HomePage = () => {

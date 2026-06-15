@@ -1,5 +1,5 @@
 import { IconFacebook, IconYoutube, IconLinkedIn } from "../../Icons/Icons";
-import Logo from "../../../assets/Logo_nontech_navy.jpg";
+import Logo from "../../../assets/Home/Logo_nontech_navy.jpg";
 
 const socialLinks = [
   {

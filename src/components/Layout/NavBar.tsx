@@ -7,7 +7,7 @@ import {
   IconClose,
   IconSearch,
 } from "../Icons/Icons";
-import Logo from "../../assets/Logo_display.jpg";
+import Logo from "../../assets/Home/Logo_display.jpg";
 
 export type NavItem = {
   label: string;

@@ -1,9 +1,9 @@
 import { SectionHeading } from "../../components/Layout/SectionHeading";
 import { NewsListItem } from "../../components/Card/NewsListItem";
 import { IconNewspaper } from "../../components/Icons/Icons";
-import newsThumb1 from "../../assets/news_thumb_1.png";
-import newsThumb2 from "../../assets/news_thumb_2.png";
-import newsThumb3 from "../../assets/news_thumb_3.png";
+import newsThumb1 from "../../assets/Home/news_thumb_1.png";
+import newsThumb2 from "../../assets/Home/news_thumb_2.png";
+import newsThumb3 from "../../assets/Home/news_thumb_3.png";
 
 const newsItems = [
   {

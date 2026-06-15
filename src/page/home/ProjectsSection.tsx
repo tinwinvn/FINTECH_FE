@@ -1,9 +1,9 @@
 import { SectionHeading } from "../../components/Layout/SectionHeading";
 import { NewsListItem } from "../../components/Card/NewsListItem";
 import { IconFlask } from "../../components/Icons/Icons";
-import projectThumb1 from "../../assets/project_thumb_1.png";
-import projectThumb2 from "../../assets/project_thumb_2.png";
-import projectThumb3 from "../../assets/project_thumb_3.png";
+import projectThumb1 from "../../assets/Home/project_thumb_1.png";
+import projectThumb2 from "../../assets/Home/project_thumb_2.png";
+import projectThumb3 from "../../assets/Home/project_thumb_3.png";
 
 const projects = [
   {
@@ -19,8 +19,7 @@ const projects = [
   },
   {
     thumbnailUrl: projectThumb3,
-    title:
-      "Nghiên cứu cơ chế thử nghiệm có kiểm soát (Sandbox) trong FinTech",
+    title: "Nghiên cứu cơ chế thử nghiệm có kiểm soát (Sandbox) trong FinTech",
     date: "",
   },
 ];
