@@ -1,3 +1,5 @@
+import { TruncateTooltip } from "../TruncateTooltip/TruncateTooltip";
+
 export type EventListItemProps = {
   day: string;
   month: string;
@@ -32,9 +34,11 @@ export const EventListItem = ({
       </div>
 
       <div className="flex flex-col justify-center min-w-0">
-        <h4 className="font-sans text-[13px] sm:text-[14px] font-semibold leading-[1.4] text-text-primary m-0 group-hover:text-brand-navy transition-colors duration-150 line-clamp-3">
-          {title}
-        </h4>
+        <TruncateTooltip text={title}>
+          <h4 className="font-sans text-[13px] sm:text-[14px] font-semibold leading-[1.4] text-text-primary m-0 group-hover:text-brand-navy transition-colors duration-150 line-clamp-3">
+            {title}
+          </h4>
+        </TruncateTooltip>
         {(time || location) && (
           <div className="flex items-center gap-2 mt-1">
             {time && (

@@ -54,7 +54,7 @@ export const Footer = ({ className = "" }: FooterProps) => {
         aria-hidden="true"
       />
 
-      <div className="relative max-w-456 mx-auto px-5 md:px-8 py-10 md:py-14 lg:py-16">
+      <div className="relative max-w-456 mx-auto px-5 md:px-8 py-5 md:py-7 lg:py-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.1fr_1.3fr_1fr_1fr_1.5fr] gap-y-10 gap-x-6 sm:gap-x-8 lg:gap-x-10">
           <div className="sm:col-span-2 lg:col-span-1 animate-footer-reveal stagger-1">
             <div className="footer-col-divider lg:pr-8 h-full">

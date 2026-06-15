@@ -1,4 +1,5 @@
 import React from "react";
+import { TruncateTooltip } from "../TruncateTooltip/TruncateTooltip";
 
 export type SectionHeadingProps = {
   title: string;
@@ -25,9 +26,11 @@ export const SectionHeading = ({
             {icon}
           </span>
         )}
-        <h2 className="font-sans text-[15px] sm:text-[18px] font-bold leading-[1.3] uppercase text-brand-navy m-0 line-clamp-1 ">
-          {title}
-        </h2>
+        <TruncateTooltip text={title}>
+          <h2 className="font-sans text-[15px] sm:text-[18px] font-bold leading-[1.3] uppercase text-brand-navy m-0 line-clamp-1 ">
+            {title}
+          </h2>
+        </TruncateTooltip>
       </div>
       {linkText && (
         <button

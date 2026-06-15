@@ -1,4 +1,5 @@
 import { IconFacebook, IconYoutube, IconLinkedIn } from "../../Icons/Icons";
+import Logo from "../../../assets/Logo_nontech_navy.jpg";
 
 const socialLinks = [
   {
@@ -30,18 +31,7 @@ export const FooterBrand = () => {
         aria-label="IFISD Homepage"
       >
         <div className="relative">
-          <svg
-            width="36"
-            height="36"
-            viewBox="0 0 36 36"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="transition-transform duration-300 group-hover:scale-105"
-          >
-            <rect width="36" height="36" rx="6" fill="#f05123" />
-            <path d="M8 28V8l10 4v12l-10 4z" fill="#1a8a34" opacity="0.9" />
-            <path d="M18 12l10-4v20l-10-4V12z" fill="white" opacity="0.6" />
-          </svg>
+          <img src={Logo} className="w-18 h-18" alt="" />
           <div
             className="absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
             style={{
@@ -51,10 +41,10 @@ export const FooterBrand = () => {
           />
         </div>
         <div className="flex flex-col leading-none">
-          <span className="font-sans text-[17px] font-bold text-text-inverse tracking-wide">
+          <span className="font-sans text-[18px] font-bold text-text-inverse tracking-wide">
             IFISD
           </span>
-          <span className="font-sans text-[8px] font-medium text-text-inverse-muted uppercase leading-[1.3] mt-0.5 max-w-40">
+          <span className="font-sans text-[9px] font-medium text-text-inverse-muted uppercase leading-[1.3] mt-0.5 max-w-40">
             Viện nghiên cứu - Đào tạo Fintech,
             <br />
             Đổi mới sáng tạo và Phát triển bền vững

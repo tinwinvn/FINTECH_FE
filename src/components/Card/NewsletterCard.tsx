@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Input } from "../Input/Input";
 import { Button } from "../Button/Button";
 import { IconMail, IconSend } from "../Icons/Icons";
+import { TruncateTooltip } from "../TruncateTooltip/TruncateTooltip";
 
 export type NewsletterCardProps = {
   title?: string;
@@ -41,9 +42,11 @@ export const NewsletterCard = ({
         </h3>
       </div>
 
-      <p className="font-sans text-[18px] font-normal leading-normal text-text-inverse-muted mb-5 m-0 line-clamp-3">
-        {description}
-      </p>
+      <TruncateTooltip text={description}>
+        <p className="font-sans text-[18px] font-normal leading-normal text-text-inverse-muted mb-5 m-0 line-clamp-3">
+          {description}
+        </p>
+      </TruncateTooltip>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-3 mt-auto">
         <Input

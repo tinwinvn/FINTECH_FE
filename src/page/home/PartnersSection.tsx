@@ -1,32 +1,39 @@
 import { useScrollAnimation } from "../../hooks/useScrollAnimation";
+import vcbLogo from "../../assets/VCB.jpg";
+import twbLogo from "../../assets/TWB.jpg";
+import adbLogo from "../../assets/ADB.png";
+import usaidLogo from "../../assets/USAID.png";
+import ifcLogo from "../../assets/IFC.jpg"
+import bidvLogo from "../../assets/BIDV.png"
+import visaLogo from "../../assets/VISA.png"
+import napasLogo from "../../assets/NAPAS.png"
 
 const partnerLogos = [
-  { name: "THE WORLD BANK", subtitle: "IBRD · IDA" },
-  { name: "ADB", subtitle: "ASIAN DEVELOPMENT BANK" },
-  { name: "USAID", subtitle: "FROM THE AMERICAN PEOPLE" },
-  { name: "IFC", subtitle: "International Finance Corporation" },
-  { name: "Vietcombank", subtitle: "" },
-  { name: "BIDV", subtitle: "" },
-  { name: "VISA", subtitle: "" },
-  { name: "NAPAS", subtitle: "" },
+  { name: "THE WORLD BANK", image: twbLogo },
+  { name: "ADB", image: adbLogo },
+  { name: "USAID", image: usaidLogo },
+  { name: "IFC", image: ifcLogo },
+  { name: "Vietcombank", image: vcbLogo },
+  { name: "BIDV", image: bidvLogo },
+  { name: "VISA", image: visaLogo },
+  { name: "NAPAS", image: napasLogo },
 ];
 
 const PartnerLogo = ({
   name,
-  subtitle,
+  image,
 }: {
   name: string;
-  subtitle: string;
+  image: string;
 }) => (
-  <div className="flex flex-col items-center justify-center min-w-27.5 sm:min-w-35 h-15 sm:h-17.5 px-4 sm:px-6 select-none">
-    <span className="font-sans text-[13px] sm:text-[16px] font-bold text-text-secondary tracking-wide whitespace-nowrap">
-      {name}
-    </span>
-    {subtitle && (
-      <span className="font-sans text-[8px] sm:text-[9px] font-normal text-text-muted uppercase tracking-wider whitespace-nowrap mt-0.5">
-        {subtitle}
-      </span>
-    )}
+  <div className="partner-logo-item flex items-center justify-center min-w-40 sm:min-w-48 h-20 sm:h-24 px-5 sm:px-8 select-none">
+    <img
+      src={image}
+      alt={name}
+      className="partner-logo-img max-h-16 sm:max-h-20 w-auto object-contain"
+      loading="lazy"
+      draggable={false}
+    />
   </div>
 );
 
@@ -57,7 +64,7 @@ export const PartnersSection = () => {
 
           <div className="flex animate-marquee gap-2 sm:gap-4">
             {[...partnerLogos, ...partnerLogos].map((logo, i) => (
-              <PartnerLogo key={i} name={logo.name} subtitle={logo.subtitle} />
+              <PartnerLogo key={i} name={logo.name} image={logo.image} />
             ))}
           </div>
         </div>

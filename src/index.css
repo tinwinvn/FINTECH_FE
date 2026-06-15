@@ -327,3 +327,75 @@ img {
   }
 }
 
+/* ── QR wrapper and pulse ring ── */
+.footer-qr-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-qr-pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(240, 81, 35, 0.2);
+  animation: qr-pulse-ring 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+.footer-qr-wrapper:hover .footer-qr-pulse-ring {
+  border-color: rgba(240, 81, 35, 0.4);
+}
+
+/* ── Scan icon animation ── */
+.footer-scan-icon {
+  animation: scan-sweep 2s ease-in-out infinite;
+}
+
+/* ── Contact row hover effect ── */
+.footer-contact-row {
+  position: relative;
+  padding: 4px 6px;
+  border-radius: 8px;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+.footer-contact-row:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateX(3px);
+}
+
+/* ── QR section ── */
+.footer-qr-section {
+  position: relative;
+}
+
+/* ── QR & Contact Animations ── */
+@keyframes qr-pulse-ring {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes scan-sweep {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.5px); }
+}
+
+/* ── Partner logo styles ── */
+.partner-logo-item {
+  transition: transform 0.3s ease;
+}
+.partner-logo-item:hover {
+  transform: scale(1.08);
+}
+.partner-logo-img {
+  filter: grayscale(30%) opacity(0.85);
+  transition: filter 0.4s ease, transform 0.3s ease;
+}
+.partner-logo-item:hover .partner-logo-img {
+  filter: grayscale(0%) opacity(1);
+}
