@@ -1,49 +1,29 @@
 import { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Button } from "../Button/Button";
+import { Link } from "react-router-dom";
+import { Button } from "../../Button/Button";
 import {
   IconChevronDown,
   IconMenu,
   IconClose,
   IconSearch,
-} from "../Icons/Icons";
-import Logo from "../../assets/Home/Logo_display.jpg";
-
-export type NavItem = {
-  label: string;
-  href: string;
-  hasDropdown?: boolean;
-};
+} from "../../Icons/Icons";
+import { DesktopNavLink } from "./DesktopNavLink";
+import { MobileNavItem } from "./MobileNavItem";
+import { navItemsData } from "./navData";
+import type { NavItemData } from "./navData";
+import Logo from "../../../assets/Home/Logo_display.jpg";
 
 export type NavBarProps = {
   logo?: React.ReactNode;
-  navItems?: NavItem[];
+  navItems?: NavItemData[];
   className?: string;
 };
 
-const defaultNavItems: NavItem[] = [
-  { label: "Trang chủ", href: "/" },
-  { label: "Giới thiệu", href: "/about", hasDropdown: true },
-  { label: "Lĩnh vực hoạt động", href: "/domains", hasDropdown: true },
-  {
-    label: "Nghiên cứu & Tư vấn chính sách",
-    href: "/research",
-    hasDropdown: true,
-  },
-  { label: "Đào tạo", href: "/training", hasDropdown: true },
-  { label: "Hợp tác", href: "/cooperation", hasDropdown: true },
-  { label: "Sự kiện", href: "/events" },
-  { label: "Tin tức", href: "/news" },
-  { label: "Thư viện tri thức", href: "/library" },
-  { label: "Liên hệ", href: "/contact" },
-];
-
 export const NavBar = ({
   logo: _logo,
-  navItems = defaultNavItems,
+  navItems = navItemsData,
   className = "",
 }: NavBarProps) => {
-  const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [lang, setLang] = useState("VI");
@@ -59,6 +39,16 @@ export const NavBar = ({
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, []);
+
   return (
     <header
       className={`w-full bg-canvas border-b border-border-hairline sticky top-0 z-50 shadow-sm ${className}`}
@@ -71,7 +61,7 @@ export const NavBar = ({
           >
             <img
               src={Logo}
-              className="h-16 w-40 py-2 px-3 sm:h-20 sm:w-56 sm:py-3 sm:px-5 lg:h-30 lg:w-90 lg:py-5 lg:px-10"
+              className="h-10 w-32 py-1 px-1.5 sm:h-16 sm:w-48 sm:py-1.5 sm:px-2.5 lg:h-20 lg:w-80 lg:py-2.5 lg:px-5"
               alt="logo"
             />
           </Link>
@@ -126,30 +116,9 @@ export const NavBar = ({
             </div>
 
             <nav className="hidden lg:flex items-center justify-center h-10">
-              {navItems.map((item) => {
-                const isActive = location.pathname === item.href;
-                return (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    className={`
-                      inline-flex items-center gap-0.5 whitespace-nowrap
-                      font-sans text-[11px] font-semibold leading-normal uppercase no-underline
-                      px-2 h-full border-b-[3px] transition-all duration-150
-                      ${
-                        isActive
-                          ? "text-brand-navy border-brand-navy"
-                          : "text-text-primary border-transparent hover:text-brand-navy"
-                      }
-                    `}
-                  >
-                    {item.label}
-                    {item.hasDropdown && (
-                      <IconChevronDown size={10} className="opacity-60" />
-                    )}
-                  </Link>
-                );
-              })}
+              {navItems.map((item) => (
+                <DesktopNavLink key={item.href} item={item} />
+              ))}
             </nav>
           </div>
 
@@ -165,30 +134,13 @@ export const NavBar = ({
 
       {mobileOpen && (
         <div className="lg:hidden border-t border-border-hairline bg-canvas animate-slide-up max-h-[70vh] overflow-y-auto">
-          {navItems.map((item) => {
-            const isActive = location.pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                to={item.href}
-                onClick={() => setMobileOpen(false)}
-                className={`
-                  flex items-center justify-between font-sans text-[13px] font-semibold uppercase no-underline
-                  px-6 py-3 border-l-[3px] transition-all duration-150
-                  ${
-                    isActive
-                      ? "text-brand-navy border-brand-navy bg-blue-50"
-                      : "text-text-primary border-transparent hover:text-brand-navy hover:bg-gray-50"
-                  }
-                `}
-              >
-                {item.label}
-                {item.hasDropdown && (
-                  <IconChevronDown size={12} className="opacity-60" />
-                )}
-              </Link>
-            );
-          })}
+          {navItems.map((item) => (
+            <MobileNavItem
+              key={item.href}
+              item={item}
+              onNavigate={() => setMobileOpen(false)}
+            />
+          ))}
           <div className="px-6 py-3 border-t border-border-hairline flex items-center gap-3">
             <div className="flex items-center flex-1 bg-canvas text-text-primary rounded-sm px-3 py-1.5 border border-border-hairline">
               <input

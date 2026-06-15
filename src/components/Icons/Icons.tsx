@@ -1161,3 +1161,229 @@ export const IconSend = ({
     <polygon points="22 2 15 22 11 13 2 9 22 2" />
   </svg>
 );
+
+export const IconMonitor = ({
+  size = 16,
+  color = "currentColor",
+  className,
+  style,
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={style}
+  >
+    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+    <line x1="8" y1="21" x2="16" y2="21" />
+    <line x1="12" y1="17" x2="12" y2="21" />
+  </svg>
+);
+
+export const IconTarget = ({
+  size = 16,
+  color = "currentColor",
+  className,
+  style,
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={style}
+  >
+    <circle cx="12" cy="12" r="10" />
+    <circle cx="12" cy="12" r="6" />
+    <circle cx="12" cy="12" r="2" />
+  </svg>
+);
+
+export const IconSitemap = ({
+  size = 16,
+  color = "currentColor",
+  className,
+  style,
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={style}
+  >
+    <rect x="9" y="2" width="6" height="4" rx="1" />
+    <rect x="2" y="18" width="6" height="4" rx="1" />
+    <rect x="16" y="18" width="6" height="4" rx="1" />
+    <line x1="12" y1="6" x2="12" y2="12" />
+    <line x1="5" y1="12" x2="19" y2="12" />
+    <line x1="5" y1="12" x2="5" y2="18" />
+    <line x1="19" y1="12" x2="19" y2="18" />
+  </svg>
+);
+
+export const IconUserTie = ({
+  size = 16,
+  color = "currentColor",
+  className,
+  style,
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={style}
+  >
+    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+    <circle cx="12" cy="7" r="4" />
+    <line x1="12" y1="11" x2="12" y2="17" />
+    <polyline points="10 13 12 15 14 13" />
+  </svg>
+);
+
+export const IconHandshake = ({
+  size = 16,
+  color = "currentColor",
+  className,
+  style,
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={style}
+  >
+    <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z" />
+    <path d="M12 5.36L8.87 8.5a2.13 2.13 0 0 0 0 3l.7.7a2.13 2.13 0 0 0 3 0l1.43-1.42 1.43 1.43a2.13 2.13 0 0 0 3 0l.7-.7" />
+  </svg>
+);
+
+export const IconFileSearch = ({
+  size = 16,
+  color = "currentColor",
+  className,
+  style,
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={style}
+  >
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <polyline points="14 2 14 8 20 8" />
+    <circle cx="11.5" cy="14.5" r="2.5" />
+    <line x1="13.25" y1="16.25" x2="15" y2="18" />
+  </svg>
+);
+
+export const IconFileText = ({
+  size = 16,
+  color = "currentColor",
+  className,
+  style,
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={style}
+  >
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+    <polyline points="14 2 14 8 20 8" />
+    <line x1="16" y1="13" x2="8" y2="13" />
+    <line x1="16" y1="17" x2="8" y2="17" />
+    <polyline points="10 9 9 9 8 9" />
+  </svg>
+);
+
+export const IconMessageCircle = ({
+  size = 16,
+  color = "currentColor",
+  className,
+  style,
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={style}
+  >
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+  </svg>
+);
+
+export const IconClipboardList = ({
+  size = 16,
+  color = "currentColor",
+  className,
+  style,
+}: IconProps) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    style={style}
+  >
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+    <line x1="10" y1="10" x2="16" y2="10" />
+    <line x1="10" y1="14" x2="16" y2="14" />
+    <line x1="10" y1="18" x2="14" y2="18" />
+    <circle cx="7" cy="10" r="0.5" fill={color} />
+    <circle cx="7" cy="14" r="0.5" fill={color} />
+    <circle cx="7" cy="18" r="0.5" fill={color} />
+  </svg>
+);

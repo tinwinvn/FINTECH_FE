@@ -105,6 +105,20 @@
     0% { background-position: -200% center; }
     100% { background-position: 200% center; }
   }
+
+  /* ── Dropdown Animations ── */
+  --animate-dropdown-enter: dropdown-enter 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-dropdown-item: dropdown-item 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+
+  @keyframes dropdown-enter {
+    from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  @keyframes dropdown-item {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }
 
 /* ── Base Styles ── */
